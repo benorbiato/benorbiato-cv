@@ -69,7 +69,7 @@ export default function Header() {
             {isDarkMode ? (
               <Moon
                 strokeWidth={1.4}
-                className="size-5 fill-gray-700 transition-transform"
+                className="size-5 fill-gray-700 transition-transform sm:hover:rotate-45"
               />
             ) : (
               <Sun
@@ -79,10 +79,13 @@ export default function Header() {
             )}
           </button>
           <Link
-            className="group relative rounded px-2 py-px sm:hover:ring-1 ring-sky-500 transition-transform dark:ring-sky-600 dark:ring-opacity-0"
             href="/projects"
             aria-label="View projects"
             aria-current={path === "/projects" ? "page" : undefined}
+            aria-disabled="true"
+            onClick={(e) => e.preventDefault()} // bloqueia o clique
+            className="group relative rounded px-2 py-px opacity-50 cursor-not-allowed 
+                      ring-sky-500 transition-transform dark:ring-sky-600 dark:ring-opacity-0"
           >
             /projects
             <Triangle
