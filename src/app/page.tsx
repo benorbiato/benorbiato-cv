@@ -61,7 +61,7 @@ const externalLinks: Link[] = [
   {
     name: "WhatsApp",
     description: "talk to me",
-    url: "https://wa.me/5511999999999",
+    url: "https://wa.me/5516982076503?text=Hello%20Beatriz%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you!",
     icon: <SiWhatsapp className="fill-[#25d366] dark:fill-zinc-200" />,
   },
   {
