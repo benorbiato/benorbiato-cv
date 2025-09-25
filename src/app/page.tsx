@@ -67,7 +67,7 @@ const externalLinks: Link[] = [
   {
     name: "Email",
     description: "contact me",
-    url: "mailto:jbn.testoni@gmail.com",
+    url: "mailto:norbiato.dev@gmail.com",
     icon: <SiGmail className="text-[#EA4335] dark:text-zinc-200" />,
   },
 ];

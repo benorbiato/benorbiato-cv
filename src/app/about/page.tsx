@@ -38,7 +38,7 @@ export default function AboutPage() {
         </p>
         <p>
           If you want to connect, feel free to send me an email at{" "}
-          <a href="mailto:jbn.testoni@gmail.com">jbn.testoni@gmail.com</a>.
+          <a href="mailto:norbiato.dev@gmail.com">norbiato.dev@gmail.com</a>.
         </p>
         <p>
           Best,
