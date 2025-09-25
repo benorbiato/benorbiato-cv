@@ -3,10 +3,8 @@ import {
   SiGmail,
   SiLinkedin,
   SiWhatsapp,
-  SiYoutube,
 } from "@icons-pack/react-simple-icons";
-import { ArrowUpRight, Download, Send } from "lucide-react";
-import Link from "next/link";
+import { ArrowUpRight, Download } from "lucide-react";
 import { ReactNode } from "react";
 
 const XLogo = () => {
@@ -61,9 +59,9 @@ const externalLinks: Link[] = [
     icon: <SiGithub />,
   },
   {
-    name: "WhastApp",
+    name: "WhatsApp",
     description: "talk to me",
-    url: "https://github.com/benorbiato",
+    url: "https://wa.me/5511999999999",
     icon: <SiWhatsapp className="fill-[#25d366] dark:fill-zinc-200" />,
   },
   {
@@ -71,19 +69,28 @@ const externalLinks: Link[] = [
     description: "contact me",
     url: "mailto:jbn.testoni@gmail.com",
     icon: <SiGmail className="text-[#EA4335] dark:text-zinc-200" />,
-  }
+  },
 ];
 
 const ExternalLink = (link: Link) => {
   return (
     <a
-      key={link.description}
+      key={link.url}
       href={link.url}
       target="_blank"
       className="group flex items-center justify-between p-4 transition-transform sm:hover:bg-zinc-100 sm:dark:hover:bg-zinc-800"
     >
-      <span className="flex items-center gap-4">
-        {link.icon} {link.name}
+      <span className="flex items-center gap-2">
+        {link.icon}
+        <span className="flex items-center gap-2">
+          {link.name}
+          {link.name === "WhatsApp" && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-1.5 py-0.5 text-xs text-green-600 ring-1 ring-green-500 dark:bg-transparent dark:text-emerald-500 dark:ring-emerald-500">
+              <span className="size-1.5 animate-pulse rounded-full bg-green-500 dark:bg-emerald-500" />
+              Online
+            </span>
+          )}
+        </span>
         <span className="text-zinc-500 opacity-0 transition-transform max-sm:hidden sm:group-hover:opacity-100 dark:text-zinc-400">
           {link.description}
         </span>
@@ -102,32 +109,24 @@ export default function HomePage() {
       <p className="text-sm">
         Software Engineer and Data Engineer with expertise in Python, FastAPI,
         MongoDB, SQL, and React. Experienced in building scalable APIs, ETL
-        pipelines, and data models, integrating SQL and NoSQL databases, and applying
-        machine learning to deliver business value. Strong focus on performance, reliability,
-        and scalability.
+        pipelines, and data models, integrating SQL and NoSQL databases, and
+        applying machine learning to deliver business value. Strong focus on
+        performance, reliability, and scalability.
       </p>
       <div className="divide-y divide-zinc-400 overflow-hidden rounded ring-1 ring-zinc-400 dark:divide-zinc-500 dark:ring-zinc-500">
         {externalLinks.map((link: Link) => (
           <ExternalLink key={link.url} {...link} />
         ))}
       </div>
-      <div className="flex justify-center gap-6 max-sm:flex-col-reverse sm:justify-between">
-        <div className="flex flex-col justify-center gap-4 max-sm:items-center">
-          <span className="-mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-sm text-green-600 ring-1 ring-green-500 dark:bg-transparent dark:text-emerald-500 dark:ring-emerald-500">
-            <div className="size-2 animate-pulse rounded-full bg-green-500 dark:bg-emerald-500" />
-            Online
-          </span>
-        </div>
-        <div className="flex flex-col gap-2">
-          <a
-            href="/luke-berry-cv.pdf"
-            download="Luke-Berry-CV.pdf"
-            className="flex flex-row items-center justify-center gap-3 rounded bg-sky-300 p-4 text-sky-800 ring-1 ring-sky-500 transition-transform sm:hover:bg-sky-400 dark:bg-inherit dark:text-sky-500 dark:ring-sky-500 sm:sm:dark:hover:bg-zinc-800"
-          >
-            <span className="text-nowrap">Download my CV</span>
-            <Download strokeWidth={1.4} className="size-5 max-sm:hidden" />
-          </a>
-        </div>
+      <div className="flex w-full">
+      <a
+        href="/luke-berry-cv.pdf"
+        download="Luke-Berry-CV.pdf"
+        className="flex w-full flex-row items-center justify-center gap-3 rounded bg-green-300 p-4 text-green-800 ring-1 ring-green-500 transition-transform sm:hover:bg-green-400 dark:bg-inherit dark:text-emerald-500 dark:ring-emerald-500 sm:dark:hover:bg-zinc-800"
+      >
+        <span className="text-nowrap">Download my CV</span>
+        <Download strokeWidth={1.4} className="size-5 max-sm:hidden" />
+      </a>
       </div>
     </div>
   );
