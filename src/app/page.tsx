@@ -120,8 +120,8 @@ export default function HomePage() {
       </div>
       <div className="flex w-full">
       <a
-        href="/luke-berry-cv.pdf"
-        download="Luke-Berry-CV.pdf"
+        href="/beatriz-norbiato-cv.pdf"
+        download="Beatriz-Norbiato-CV.pdf"
         className="flex w-full flex-row items-center justify-center gap-3 rounded bg-green-300 p-4 text-green-800 ring-1 ring-green-500 transition-transform sm:hover:bg-green-400 dark:bg-inherit dark:text-emerald-500 dark:ring-emerald-500 sm:dark:hover:bg-zinc-800"
       >
         <span className="text-nowrap">Download my CV</span>
